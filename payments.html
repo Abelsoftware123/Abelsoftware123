@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payments - Abelsoftware123</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Payments</h1>
+        <p>Informatie over onze betaalmethoden.</p>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="company.html">Abelsoftware123 Company</a></li>
+                <li><a href="downloads.html">Downloads</a></li>
+                <li><a href="apps.html">List of Apps</a></li>
+                <li><a href="payments.html">Payments</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="payments-info">
+            <h2>Betaalopties via PayPal</h2>
+            <p>Koop onze apps direct en veilig via PayPal. Selecteer hieronder de gewenste applicatie en klik op de knop om te betalen.</p>
+
+            <div class="paypal-item">
+                <h3>Applicatie 1</h3>
+                <p>Prijs: €19,99</p>
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                    <input type="hidden" name="cmd" value="_xclick">
+                    <input type="hidden" name="business" value="jouw-paypal-email@example.com"> <input type="hidden" name="item_name" value="Applicatie 1">
+                    <input type="hidden" name="amount" value="19.99">
+                    <input type="hidden" name="currency_code" value="EUR">
+                    <input type="hidden" name="return" value="https://www.abelsoftware123.com/success.html">
+                    <input type="hidden" name="cancel_return" value="https://www.abelsoftware123.com/cancel.html">
+                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                </form>
+            </div>
+
+            <div class="paypal-item">
+                <h3>Applicatie 2</h3>
+                <p>Prijs: €29,99</p>
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                    <input type="hidden" name="cmd" value="_xclick">
+                    <input type="hidden" name="business" value="jouw-paypal-email@example.com"> <input type="hidden" name="item_name" value="Applicatie 2">
+                    <input type="hidden" name="amount" value="29.99">
+                    <input type="hidden" name="currency_code" value="EUR">
+                    <input type="hidden" name="return" value="https://www.abelsoftware123.com/success.html">
+                    <input type="hidden" name="cancel_return" value="https://www.abelsoftware123.com/cancel.html">
+                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                </form>
+            </div>
+
+            <p>Voor vragen over betalingen, neem contact op met onze klantenservice.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Abelsoftware123. Alle rechten voorbehouden.</p>
+    </footer>
+
+</body>
+</html>
