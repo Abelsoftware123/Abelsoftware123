@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payments - Abelsoftware123</title>
+    <title>Betalingen - Abelsoftware123</title>
     
+    <script 
+      src="https://www.paypal.com/sdk/js?client-id=BAACVxE9etmbo8FK-n-yPcOFEuVSOvZ9GXBW7tbNwnkY4GPpJpj_zE_GNEnYaLq3HpwWm4h3IdBL5MSS88&components=hosted-buttons&disable-funding=venmo&currency=EUR">
+    </script>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -32,31 +36,12 @@
             <div class="paypal-item">
                 <h3>Application WMWario Happy The Game</h3>
                 <p>Prijs: €2,50</p>
-                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                    <input type="hidden" name="cmd" value="_xclick">
-                    <input type="hidden" name="business" value="jouw-paypal-email@example.com">
-                    <input type="hidden" name="item_name" value="Applicatie 1">
-                    <input type="hidden" name="amount" value="19.99">
-                    <input type="hidden" name="currency_code" value="EUR">
-                    <input type="hidden" name="return" value="https://www.abelsoftware123.com/success.html">
-                    <input type="hidden" name="cancel_return" value="https://www.abelsoftware123.com/cancel.html">
-                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-                </form>
-            </div>
-
-            <div class="paypal-item">
-                <h3>Applicatie 2</h3>
-                <p>Prijs: €29,99</p>
-                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                    <input type="hidden" name="cmd" value="_xclick">
-                    <input type="hidden" name="business" value="jouw-paypal-email@example.com">
-                    <input type="hidden" name="item_name" value="Applicatie 2">
-                    <input type="hidden" name="amount" value="29.99">
-                    <input type="hidden" name="currency_code" value="EUR">
-                    <input type="hidden" name="return" value="https://www.abelsoftware123.com/success.html">
-                    <input type="hidden" name="cancel_return" value="https://www.abelsoftware123.com/cancel.html">
-                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-                </form>
+                <div id="paypal-container-7L36E2XCNG9B2"></div>
+                <script>
+                  paypal.HostedButtons({
+                    hostedButtonId: "7L36E2XCNG9B2",
+                  }).render("#paypal-container-7L36E2XCNG9B2");
+                </script>
             </div>
 
             <p>Voor vragen over betalingen, neem contact op met onze klantenservice.</p>
