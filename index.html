@@ -4,49 +4,187 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welkom - Abelsoftware123</title>
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+        }
+        header {
+            text-align: center;
+            padding: 2rem 0;
+            background-color: #e2e8f0;
+            border-radius: 12px 12px 0 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        nav a {
+            color: #4a5568;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav a:hover {
+            background-color: #cbd5e1;
+            color: #2d3748;
+        }
+        main {
+            padding: 2rem;
+        }
+        section {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        h1, h2 {
+            color: #2d3748;
+        }
+        button {
+            background-color: #4a5568;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border: none;
+        }
+        button:hover {
+            background-color: #2d3748;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            color: #a0aec0;
+        }
+        #modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 8px;
+        }
+        .close-button {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
 
-    <header>
-        <h1>Welkom bij Abelsoftware123</h1>
-        <p>Jouw partner in softwareontwikkeling.</p>
-        
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="company.html">Abelsoftware123 Company</a></li>
-                <li><a href="downloads.html">Downloads</a></li>
-                <li><a href="apps.html">List of Apps</a></li>
-                <li><a href="payments.html">Payments</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="container mx-auto p-4 md:p-8">
 
-    <main>
-        <section class="introductie">
-            <h2>Over Ons</h2>
-            <p>Wij zijn gespecialiseerd in het ontwikkelen van op maat gemaakte software die aan al uw behoeften voldoet. Onze missie is om iedereen een goede game/web plezier te geven. Uw wensen staan voorop! </p>
-        </section>
+        <header class="text-center p-8 bg-blue-100 rounded-lg shadow-md">
+            <h1 class="text-4xl font-bold text-gray-800">Welkom bij Abelsoftware123</h1>
+            <p class="mt-2 text-lg text-gray-600">Jouw partner in softwareontwikkeling.</p>
+            
+            <nav class="mt-4">
+                <ul class="flex flex-col md:flex-row justify-center space-y-2 md:space-y-0 md:space-x-4">
+                    <li><a href="index.html" class="text-blue-700 hover:text-blue-900 font-semibold p-2 rounded-md transition-colors duration-200">Home</a></li>
+                    <li><a href="company.html" class="text-blue-700 hover:text-blue-900 font-semibold p-2 rounded-md transition-colors duration-200">Abelsoftware123 Company</a></li>
+                    <li><a href="downloads.html" class="text-blue-700 hover:text-blue-900 font-semibold p-2 rounded-md transition-colors duration-200">Downloads</a></li>
+                    <li><a href="apps.html" class="text-blue-700 hover:text-blue-900 font-semibold p-2 rounded-md transition-colors duration-200">List of Apps</a></li>
+                    <li><a href="payments.html" class="text-blue-700 hover:text-blue-900 font-semibold p-2 rounded-md transition-colors duration-200">Payments</a></li>
+                </ul>
+            </nav>
+        </header>
 
-        <section class="contact">
-            <h2>Neem Contact Op</h2>
-            <p>Klik op de knop hieronder om contact met ons op te nemen.</p>
-            <button id="contact-knop">Contact</button>
-        </section>
-    </main>
+        <main class="mt-8">
+            <section class="introductie bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-semibold text-gray-700">Over Ons</h2>
+                <p class="mt-2 text-gray-600">Wij zijn gespecialiseerd in het ontwikkelen van op maat gemaakte software die aan al uw behoeften voldoet. Onze missie is om iedereen een goede game/web plezier te geven. Uw wensen staan voorop!</p>
+                <!-- Nieuwe startknop om de app te downloaden -->
+                <button id="launch-knop" class="mt-4 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg shadow-lg transition-colors duration-200">Abelsoftware123 The App Official</button>
+            </section>
 
-    <footer>
-        <p>&copy; 2025 Abelsoftware123. Alle rechten voorbehouden.</p>
-    </footer>
+            <section class="contact bg-white p-6 rounded-lg shadow-md mt-6">
+                <h2 class="text-2xl font-semibold text-gray-700">Neem Contact Op</h2>
+                <p class="mt-2 text-gray-600">Klik op de knop hieronder om contact met ons op te nemen.</p>
+                <button id="contact-knop" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-lg transition-colors duration-200">Contact</button>
+            </section>
+        </main>
 
-    <div id="modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4);">
-        <div style="background-color: #fefefe; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 80%; max-width: 500px; border-radius: 8px;">
-            <span id="close-button" style="color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
-            <p>Bedankt voor uw interesse! Stuur een e-mail naar abelsoftware123@hotmail.com.</p>
+        <footer class="mt-8 text-center text-gray-500 text-sm">
+            <p>&copy; 2025 Abelsoftware123. Alle rechten voorbehouden.</p>
+        </footer>
+
+        <!-- Modal om contactinformatie weer te geven -->
+        <div id="modal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center">
+            <div class="bg-white p-8 rounded-lg shadow-lg w-11/12 md:w-1/2 lg:w-1/3">
+                <div class="flex justify-end">
+                    <span id="close-button" class="text-gray-500 text-2xl font-bold cursor-pointer">&times;</span>
+                </div>
+                <p class="mt-4 text-center text-lg text-gray-700">Bedankt voor uw interesse! Stuur een e-mail naar abelsoftware123@hotmail.com.</p>
+            </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const contactKnop = document.getElementById('contact-knop');
+            const launchKnop = document.getElementById('launch-knop');
+            const modal = document.getElementById('modal');
+            const closeButton = document.getElementById('close-button');
+
+            // Behandel klik op de contactknop
+            contactKnop.addEventListener('click', () => {
+                modal.classList.remove('hidden');
+            });
+
+            // Behandel klik op de sluitknop van de modal
+            closeButton.addEventListener('click', () => {
+                modal.classList.add('hidden');
+            });
+
+            // Behandel klikken buiten de modal
+            window.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    modal.classList.add('hidden');
+                }
+            });
+
+            // Behandel klik op de startknop
+            launchKnop.addEventListener('click', () => {
+                window.location.href = "https://www.dropbox.com/scl/fi/68709nqom1x9wblfzqbol/_Abelsoftware123_19110839.apk?rlkey=dlxwmmio5g8o5joedmz80rv8i&st=elsof2hi&dl=0";
+            });
+        });
+    </script>
 </body>
 </html>
+
