@@ -4,7 +4,123 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welkom - Abelsoftware123</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- We voegen de styling hier direct toe, zoals gevraagd -->
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        header p {
+            margin: 0.5em 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 2em;
+            text-align: center;
+        }
+
+        section {
+            margin-bottom: 2em;
+        }
+
+        .introductie {
+            background-color: #fff;
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Styling voor de groene knoppen */
+        .groene-knop {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .groene-knop:hover {
+            background-color: #218838;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        #modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        #modal > div {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 8px;
+        }
+
+        #close-button {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 
@@ -29,12 +145,14 @@
             <p>Wij zijn gespecialiseerd in het ontwikkelen van op maat gemaakte software die aan al uw behoeften voldoet. Onze missie is om iedereen een goede game/web plezier te geven. Uw wensen staan voorop! </p>
         </section>
         <div style="text-align: center; margin-top: 20px;">
-            <a href="https://www.dropbox.com/scl/fi/68709nqom1x9wblfzqbol/_Abelsoftware123_19110839.apk?rlkey=dlxwmmio5g8o5joedmz80rv8i&st=zw63riep&dl=1" download>Download de app</a>
+            <!-- De downloadlink met de nieuwe klasse -->
+            <a href="https://www.dropbox.com/scl/fi/68709nqom1x9wblfzqbol/_Abelsoftware123_19110839.apk?rlkey=dlxwmmio5g8o5joedmz80rv8i&st=zw63riep&dl=1" download class="groene-knop">Download de app</a>
         </div>
         <section class="contact">
             <h2>Neem Contact Op</h2>
             <p>Klik op de knop hieronder om contact met ons op te nemen.</p>
-            <button id="contact-knop">Contact</button>
+            <!-- De contactknop met de nieuwe klasse -->
+            <button id="contact-knop" class="groene-knop">Contact</button>
         </section>
     </main>
 
@@ -49,6 +167,42 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- We voegen het script hier direct toe, zoals gevraagd -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Selecteer de knoppen en de modal
+            const contactKnop = document.getElementById('contact-knop');
+            const modal = document.getElementById('modal');
+            const sluitKnop = document.getElementById('close-button');
+
+            // Functie om de modal te openen
+            function openModal() {
+                modal.style.display = 'block';
+            }
+
+            // Functie om de modal te sluiten
+            function closeModal() {
+                modal.style.display = 'none';
+            }
+
+            // Voeg een 'klik'-gebeurtenis toe aan de contactknop
+            if (contactKnop) {
+                contactKnop.addEventListener('click', openModal);
+            }
+
+            // Voeg een 'klik'-gebeurtenis toe aan de sluitknop
+            if (sluitKnop) {
+                sluitKnop.addEventListener('click', closeModal);
+            }
+
+            // Sluit de modal als de gebruiker buiten het venster klikt
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
+
